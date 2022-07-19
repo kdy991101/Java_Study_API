@@ -23,21 +23,25 @@ public class StringMain1 {
 		System.out.println(str4); //iu
 		
 		System.out.println("=======================================");
-		System.out.println(str1.equals(str2));
-		System.out.println(str1.equals(str3));
+//		System.out.println(str1.equals(str2));
+//		System.out.println(str1.equals(str3));
 		//주소를 판단하는 것이 아닌 주소안에있는 데이터의 내용이 서로 같은지를 확인
 		System.out.println("=======================================");
 		StringStudy ss = new StringStudy();
 		System.out.println("0번 인덱스만 출력하기");
-		ss.studyCharAt();
+//		ss.studyCharAt();
 		System.out.println("\n=======================================");
 		StringStudy2 ss2 = new StringStudy2();
 //		System.out.println("\nindexOf출력하기");
 //		ss2.StudyIndexOf();
 //		ss2.StudyIndexOfEx1();
 //		ss2.studySubString();
-		ss2.ex2();
+//		ss2.ex2();
 		System.out.println("\n=======================================");
+		StringStudy3 ss3 = new StringStudy3();
+//		ss3.studySpilt();
+		ss3.studySplit2();
+		ss3.studySplit3();
 
 
 	}
