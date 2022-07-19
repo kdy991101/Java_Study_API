@@ -31,6 +31,7 @@ public class WrapperEx2 {
 		//결과 : 9 9 1 1 0 1  1 2 3 4 5 6 7
 		char jumin2[] = ju.toCharArray();
 		System.out.println(jumin2);
+		int nums[] = Character.getNumericValue(jumin2[]);
 		for(int i = 0; i<jumin2.length; i++)
 		{
 			System.out.print(jumin2[i]);
