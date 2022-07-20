@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class WeatherController {
 	Scanner sc = new Scanner(System.in);
 	WeatherService ws = new WeatherService();
-//	WeatherView wv = new WeatherView();
+	WeatherView wv = new WeatherView();
 	public void start() {
 		ArrayList<CityDTO> ar = new ArrayList<>();
 		 
@@ -24,7 +24,7 @@ public class WeatherController {
 			else if(num == 2)//전국 검색
 			{
 				
-				
+				wv.view(ar);
 			
 			}
 			else if(num == 3)//도시 날씨 검색
