@@ -1,5 +1,7 @@
 package com.iu.lang.string.ex1;
 
+import java.util.StringTokenizer;
+
 public class WorkerService {
 //	private String info;
 	private StringBuffer sb;
@@ -18,15 +20,26 @@ public class WorkerService {
 	public WorkerDTO[] init() {
 		//인포에있는 데이터를 parsing해서 워커 디키오에 대입하고 
 		//워커 디키오를 모은 배열을 리턴해준다
-//		String info = "서울,대전,대구,부산,제주,광주,강릉";
-//		String[] citys = info.split(","); 
-//			for(String city:citys) {
-//			System.out.println(city);
 //		info.split(",");
 		WorkerService ws;
 		String info = sb.toString();
 		String[] names = info.split(",");  // ws info 정보를 names배열에 대입
 		//String[] infos = ws.info.split("-");
+		StringTokenizer st = new StringTokenizer(info, "-");
+		WorkerDTO[] workerDTOs = new WorkerDTO[st.countTokens()/4];
+		int index = 0;
+		while(st.hasMoreTokens()) {
+		WorkerDTO workerDTO = new WorkerDTO();
+		workerDTO.setName(st.nextToken());
+		workerDTO.setDepartment(st.nextToken());
+		workerDTO.setJop(st.nextToken());
+		workerDTO.setPhone(st.nextToken());
+			workerDTOs[index] = workerDTO;
+			index++;
+		}
+//		System.out.println(st.countTokens());
+		
+		
 		int i = 0;
 //		String info;
 		WorkerDTO[] dtoArray = new WorkerDTO[names.length];//새로운 배열을 만듬 새로운 배열의 길이는 names의 길이만큼

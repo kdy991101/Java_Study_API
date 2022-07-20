@@ -17,8 +17,10 @@ public class WrapperEx1 {
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("주민번호를 입력하여 주세요.");
 		String number = sc.next();
+		System.out.println(number);
 		
-		String age = number.substring(0, 2);
+		String age = number.substring(0, 2);//년도를 꺼내옴
+		
 //		System.out.println(age + "년생입니다.");
 		int age1 = Integer.parseInt(age);
 		if(age1 > 22)

@@ -59,9 +59,9 @@ public class WrapperMain1 {
 //		System.out.println(num + 2);
 		
 		WrapperEx1 we = new WrapperEx1();
-//		we.ex1();
+		we.ex1();
 		WrapperEx2 we2 = new WrapperEx2();
-		we2.juminCheck();
+//		we2.juminCheck();
 
 	}
 

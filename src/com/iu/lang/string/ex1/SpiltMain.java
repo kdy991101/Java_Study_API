@@ -7,6 +7,8 @@ public class SpiltMain {
 		WorkerService ws = new WorkerService();
 		WorkerView wv = new WorkerView();
 		
+		
+		
 		WorkerDTO[]dtoArray  = ws.init();
 //		wv.view(dtoArray);
 		int num = 10;

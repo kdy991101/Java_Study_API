@@ -3,49 +3,92 @@ package com.iu.lang.wrapper.ex1;
 import java.util.Scanner;
 
 public class WrapperEx2 {
+	//문자로 받은 것을 숫자로 변경하여 *2
+	//문자열을 primitive로 변경한다
+//	public void juminCheck1() {//======================강사님 풀이
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("주민번호 입력하세요.");
+//		String jumin1 = "991101-1234567";
+//		
+//		int count = 2;
+//		int sum1 = 0;
+//		
+//		for(int i = 0; i<jumin1.length()-1; i++) {
+//		
+//		//꺼내는 방법
+//		//1.subString()메서드 리턴타입 String
+//		String num1 = jumin1.substring(0, 1);//1,2 2,3 ...
+//		int n1 = Integer.parseInt(num1);
+//		
+//		//2.charAt()메서드  리턴타입 char
+//		char ch1 = jumin1.charAt(0);
+//			
+//		//ch -> 문자열로 변환
+//
+//		String num2 = String.valueOf(ch1);
+//		int n2 = Integer.parseInt(String.valueOf(jumin1.charAt(i))); // 방법1
+//		//위 두줄을 하나로
+////		int n2 = Integer.parseInt(String.valueOf(ch1));
+//		
+//		if(i == 6) {
+//			continue;
+//		}
+//		
+//		sum1 = sum1 + n2*count;
+//		count++;
+////		int n3 = Integer.parseInt(ch1 + "");// 방법2
+//		
+//		}
+//		int check = sum1%11;
+//		check = 11-check;
+//		if(check > 9) {
+//			check = check%10;
+//		}
+//		
+//		//check용 번호
+//		int checkNum1 = String.valueOf(jumin1.charAt(jumin1.length()-1));
+//		
+//		if(check == checkNum1) {
+//			System.out.println("정상 주민번호");
+//		}else {
+//			System.out.println("비정상 주민번호");
+//		}
+//	}//=========================================================================
 	
-	//juminCheck
-	//주민번호 입력
-	//9  7  1 1 2   4 - 1 2  3  4  5  6 7
-  //* 2  3  4 5 6   7 - 8 9  2  3  4  5 6 
-//   18 21  4 5 12 28 - 8 18 6 12 20 30
-	//192
-	//총합을 11로 나누어 나머지를 구함
-	//192/11 몫-17 나머지 -5
-	//나머지를 11에서 뺸 결과 (6)
 	
-	//나머지를 11에서 뺀 결과를 체크용 번호와 같은지 비교
-//	11-0 = 11
-	
-	//만약에 위의 연상결과가 두자리라면 연산결과를 다시 10으로 나눈 나머지와
-	//체크용번호를 비교
-	//11/10=1
 	public void juminCheck() {
-		String jumin = "9 9 1 1 0 1 - 1 2 3 4 5 6 7";
-//		Scanner sc  = new Scanner(System.in);
-//		System.out.println("주민번호를 입력하여 주세요.");
-//		String number = sc.next();
-//		String str2 = str.replace('l', 'w');
-		String ju = jumin.replace("-", "");
-		System.out.println(ju);
-		//결과 : 9 9 1 1 0 1  1 2 3 4 5 6 7
-		char jumin2[] = ju.toCharArray();
-		System.out.println(jumin2);
-		int nums[] = Character.getNumericValue(jumin2[]);
-		for(int i = 0; i<jumin2.length; i++)
-		{
-			System.out.print(jumin2[i]);
-		}
-//		int[] nums = Character.getNumericValue();
-//		int i;
-//		for(i = 0; i<ju.length(); i++)
-		{
-//			jumin2[i];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("주민번호를 \"-\"를 포함하여 입력해주세요");
+		String jumin = sc.next();
+		//String jumin = "971124-1234567";
+		int sum = 0;
+		int j = 2;
+		for(int i = 0; i < jumin.length() - 1; i++) {
+			if(i == 6) {
+				continue;
+			}
+			int count = Integer.parseInt(String.valueOf(jumin.charAt(i)));//괄호 안에부터 시작한다.
+			count *= j;
+			sum += count;
+			j++;
+			if(j > 9) {
+				j = 2;
+			}
 		}
 		
+		int c = 11 - sum%11;
+		System.out.println(c);
 		
-		
-		
-		
+		if(c > 9 && c < 100) {
+			c = c%10;
+		}
+		if(c == Integer.parseInt(String.valueOf(jumin.charAt(13)))) {
+			System.out.println("합법 주민입니다");
+		}else {
+			System.out.println("합법 주민이 아닙니다");
+		}
 	}
 }
+
+		
+	

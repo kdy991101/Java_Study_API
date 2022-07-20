@@ -1,0 +1,29 @@
+package com.iu.util.ex1;
+
+import java.util.ArrayList;
+
+public class WeatherView {
+	CityDTO cd = new CityDTO();
+	public void view(CityDTO cityDTO) {
+		System.out.println(cityDTO.getName());
+		System.out.println(cityDTO.getGion());
+		System.out.println(cityDTO.getHum());
+		System.out.println(cityDTO.getStatus());
+	}
+	
+	public void view(ArrayList<CityDTO> ar) {
+		//리스트를 받아서 모든 정보를 출력
+		for(int i = 0; i<ar.size(); i++)
+		{
+			CityDTO cityDTO = ar.get(i);
+			this.view(cityDTO);
+		}
+	}
+//	public void view(ArrayList arrayList) {
+//		for(int i = 0; i<arrayList; i++) {
+//		
+//			System.out.println();
+//		}
+//
+//}
+}
