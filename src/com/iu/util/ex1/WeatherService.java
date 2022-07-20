@@ -67,6 +67,7 @@ public class WeatherService {
 			System.out.println("지역정보를 삭제합니다.");
 			ar.remove(i);
 			System.out.println("삭제 완료");
+			break;
 		}
 		else 
 			{
@@ -79,7 +80,7 @@ public class WeatherService {
 		CityDTO cityDTO = new CityDTO();
 		System.out.println("도시를 검색합니다\n도시명을 입력하세요.");
 		String name = sc.next();
-		ListView listView = new ListView();
+//		ListView listView = new ListView();
 		
 		CityDTO cityForReturn = null;
 		
@@ -93,7 +94,7 @@ public class WeatherService {
 			}else
 			{
 				//System.out.println("정보가 없습니다.");
-				cityForReturn = null;
+//				cityForReturn = null;
 				System.out.println("정보가 없습니다.");
 			}
 		}

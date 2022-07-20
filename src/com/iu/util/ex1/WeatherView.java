@@ -13,6 +13,7 @@ public class WeatherView {
 	
 	public void view(ArrayList<CityDTO> ar) {
 		//리스트를 받아서 모든 정보를 출력
+		System.out.println("전국 정보를 표시합니다.");
 		for(int i = 0; i<ar.size(); i++)
 		{
 			CityDTO cityDTO = ar.get(i);
