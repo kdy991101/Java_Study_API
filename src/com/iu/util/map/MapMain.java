@@ -39,7 +39,8 @@ public class MapMain {
 		System.out.println(check);
 
 		//1.key들을 알아내기
-		Set<String> set = map.keySet();//맵에 있는 키들을 모아 set이라는 타입으로 모아줌
+		Set<String> set = map.keySet();
+		//맵에 있는 키들을 모아 set이라는 타입으로 모아줌
 		
 		Iterator<String> it =  set.iterator();
 //		iterator = 열거,반복

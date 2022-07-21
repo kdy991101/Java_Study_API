@@ -21,13 +21,12 @@ public class WeatherService {
 //		-init메서드
 //		 sb에 있는 요소들을 파싱해서 CityDTO에 담아 리턴한다
 	public void init(ArrayList<CityDTO> ar) {
-		ListView listView = new ListView();
 		String info = sb.toString();
 		info = info.replace(",", "-");
 		System.out.println(info);
 		StringTokenizer st = new StringTokenizer(info, "-");
 		//내가 파싱할 데이터명 , 기준을 설정
-		System.out.println(st);
+//		System.out.println(st);
 		
 		while(st.hasMoreTokens()) {
 			CityDTO cityDTO = new CityDTO();//도시가 4개이니 DTO도 4개
@@ -60,7 +59,7 @@ public class WeatherService {
 	
 	
 	
-	public void remove(ArrayList<CityDTO> ar) {//삭제
+	public boolean remove(ArrayList<CityDTO> ar) {//삭제
 		//add(ArrayList<CityDTO> ar)=리스트를 받아옴
 		//리스트에서 꺼낼 시에는 get
 		//리스트는 배열기반임
@@ -83,11 +82,9 @@ public class WeatherService {
 //			System.out.println("삭제 완료");
 			break;//찾고 반복문 종료
 		}
-		else 
-			{
-				System.out.println("오류입니다.");
-			}
 		}
+		return r;
+		
 		
 		//향상된 for문
 		//향상된 포문은 인덱스를 사용할 수 없음

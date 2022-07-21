@@ -11,8 +11,9 @@ public class WeatherView {
 		System.out.println(cityDTO.getStatus());
 	}
 	
+//	
 	public void view(ArrayList<CityDTO> ar) {
-		//리스트를 받아서 모든 정보를 출력
+//		//리스트를 받아서 모든 정보를 출력
 		System.out.println("전국 정보를 표시합니다.");
 		for(int i = 0; i<ar.size(); i++)
 		{
@@ -20,11 +21,9 @@ public class WeatherView {
 			this.view(cityDTO);
 		}
 	}
-//	public void view(ArrayList arrayList) {
-//		for(int i = 0; i<arrayList; i++) {
-//		
-//			System.out.println();
-//		}
-//
-//}
+	
+	public void view(String message) {
+		System.out.println(message);
+	}
+
 }
