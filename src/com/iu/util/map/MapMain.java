@@ -25,7 +25,7 @@ public class MapMain {
 //		    false
 
 		
-		int num = map.get("n2");
+		int num = map.get("n2");//n2 = 키임
 		System.out.println(num);
 //		결과 = 20
 		
